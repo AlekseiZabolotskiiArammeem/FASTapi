@@ -20,7 +20,7 @@ datasetttt = model.read_data
 def pred():
     #data = datasetttt
     #prediction = model.predictions
-    arrayd = model.save_data
+    arrayd = model.save_data()
     return {
         'array': arrayd  
     }

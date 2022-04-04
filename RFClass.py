@@ -224,10 +224,8 @@ class Predict:
 #    arr = arr.reshape(25,10)
 #    arr = pd.DataFrame(arr,index=datasetttt[0:25].index,columns=datasetttt[0:10].columns )  
 #    print(arr)           
-        
-        
     def save_data(self):
-        forecasterd = self.fitdata(datasetttt)
+        #forecasterd = self.fitdata(datasetttt)
         #PIK = "models.pckl"
         #pred.append(forecasterd)
         #with open("models.pckl", "wb") as f:
@@ -236,7 +234,8 @@ class Predict:
             
         #with open(PIK, "rb") as f:
         #    print(pickle.load(f))
-
+        datasetttt = self.read_data()
+        ar = self.predictions(self,datasetttt)
         arr = np.array(ar)
         arr = arr.reshape(25,10)
         arr = pd.DataFrame(arr,index=datasetttt[0:25].index,columns=datasetttt[0:10].columns )    
