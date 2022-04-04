@@ -96,7 +96,7 @@ from pydantic import BaseModel
 import joblib
 from fastapi import FastAPI
 
-#app = FastAPI()
+app = FastAPI()
 
 #class InputDoc(BaseModel):
  # text  : str
@@ -111,7 +111,7 @@ class Predict:
     #    if exists. If not, calls the _train_model method and 
     #    saves the model
     def __init__(self):
-        #self.df = datasetttt
+        #self.datasetttt = datasetttt
         self.model_fname_ = 'model.pkl'
           
 
@@ -188,7 +188,7 @@ class Predict:
                   )
             return forecaster
         
-    def predictions(self):
+    def predictions(self,datasetttt):
         end_train = 800
         end_validation = 951
         for index in range(datasetttt.shape[1]):
