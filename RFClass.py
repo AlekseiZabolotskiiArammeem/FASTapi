@@ -98,11 +98,11 @@ from fastapi import FastAPI
 
 #app = FastAPI()
 
-class InputDoc(BaseModel):
-  text  : str
+#class InputDoc(BaseModel):
+ # text  : str
 
-class Orders(BaseModel):
-    arr: float 
+#class Orders(BaseModel):
+ #   arr: float 
     #datasetttt:float
 
 #class Data # 2. Class which describes a single flower measurements
@@ -242,7 +242,7 @@ class Predict:
         arr = pd.DataFrame(arr,index=datasetttt[0:25].index,columns=datasetttt[0:10].columns )    
         print(arr)           
             
-    def main(argv):
+   # def main(argv):
    # if torch.cuda.is_available():
    #     dev = "cuda:0"
         
@@ -250,19 +250,19 @@ class Predict:
    #     dev = "cpu"
    #     device = torch.device(dev)
     #    torch.cuda.set_device(-1)
-        if __name__ == "__main__":
+    #    if __name__ == "__main__":
             
-            main(sys.argv[1:])
-p = Predict()             
-schedule.every(24).hours.do(p.read_data)
-datasetttt = p.read_data()     
-schedule.every().monday.do(p.fitdata)  
-p.fitdata(datasetttt)
-schedule.every(24).hours.do(p.predictions) 
-p.predictions()
-schedule.every(24).hours.do(p.save_data)
-p.save_data()
+     #       main(sys.argv[1:])
+#p = Predict()             
+#schedule.every(24).hours.do(p.read_data)
+#datasetttt = p.read_data()     
+#schedule.every().monday.do(p.fitdata)  
+#p.fitdata(datasetttt)
+#schedule.every(24).hours.do(p.predictions) 
+#p.predictions()
+#schedule.every(24).hours.do(p.save_data)
+#p.save_data()
 
 
-class Ordersdata(BaseModel):
-    data: datasetttt
+#class Ordersdata(BaseModel):
+ #   data: datasetttt

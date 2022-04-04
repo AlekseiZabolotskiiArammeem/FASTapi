@@ -2,7 +2,7 @@
 # 1. Library imports
 import uvicorn
 from fastapi import FastAPI
-from RFClass import  Orders, Predict, datasetttt,Ordersdata
+from RFClass import  Predict #,Ordersdata
 
 # 2. Create app and model objects
 app = FastAPI()
@@ -12,9 +12,9 @@ app = FastAPI()
 # 3. Expose the prediction functionality, make a prediction from the passed
 #    JSON data and return the predicted flower species with the confidence
 @app.post('/predict')
-def predictions(data : Ordersdata):
+def predictions():
     #data = datasetttt
-    prediction = Predict.predictions(datasetttt)
+    prediction = Predict.predictions()
     return {
         'prediction': prediction, 
         'array': Predict.save_data
